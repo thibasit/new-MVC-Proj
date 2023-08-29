@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Mvc_project.ViewModel.LoginVM
+@{
+}
+@if(ViewBag.errormessage != null)
+{
+    <h3> 
+        @ViewBag.errormessage
+    </h3>
+}
+else if(ViewBag.successmessage != null)
+{
+    <h3> 
+        @ViewBag.successmessage
+    </h3>
+}
+<div class="bg-secondary bg-opacity-10 py-3">
+    <div class="container">
+        <h2>You Can Easily Login To Your Accont Here</h2>
+    </div>
+</div>
+<div class="container py-5">
+    <form method="post">
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="text" value="" class="form-control"  asp-for="UserEmail"/>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="text" value="" class="form-control" asp-for="PasswordHash" />
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-dark">Submit</button>
+        </div>
+    </form>
+</div>
